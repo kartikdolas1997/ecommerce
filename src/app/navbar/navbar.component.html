@@ -1,0 +1,32 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button mat-button routerLink="/">O</button>
+    <button mat-button routerLink="/cart">Shopping Cart</button>
+    <ng-template #anonymousUser>
+      <button mat-button routerLink="/login">
+        Log In
+      </button>
+    </ng-template>
+
+    <!-- <button mat-button *ngIf="!(user$ | async)" routerLink="/login">
+      Log In
+    </button> -->
+
+    <button
+      mat-button
+      [matMenuTriggerFor]="menu"
+      *ngIf="appUser; else anonymousUser"
+    >
+      {{ appUser.name }}
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="my/orders">My Orders</button>
+      <ng-container *ngIf="appUser.isAdmin">
+        <!-- {{appUser|json}} -->
+        <button mat-menu-item routerLink="admin/orders">Manage Orders</button>
+        <button mat-menu-item routerLink="admin/products">Manage Products</button>  
+      </ng-container>
+      <button mat-menu-item (click)="logout()">Log Out</button>
+    </mat-menu>
+  </nav>
+</div>
