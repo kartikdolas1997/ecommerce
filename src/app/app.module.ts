@@ -26,6 +26,8 @@ import { OrdersSuccessComponent } from './orders-success/orders-success.componen
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
 import { UserService } from './user.service';
 import { AdminAuthGuardService as AdminAuthGuard } from './admin-auth-guard.service';
+import { PrductFormComponent } from './admin/prduct-form/prduct-form.component';
+import { CategoryService } from './category.service';
 
 
 // import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -45,6 +47,7 @@ import { AdminAuthGuardService as AdminAuthGuard } from './admin-auth-guard.serv
     AdminProductsComponent,
     CheckOutComponent,
     OrdersSuccessComponent,
+    PrductFormComponent,
 
   ],
   imports: [
@@ -61,7 +64,7 @@ import { AdminAuthGuardService as AdminAuthGuard } from './admin-auth-guard.serv
     
     // MDBBootstrapModule.forRoot()
   ],
-  providers: [AuthService, AuthGuard,UserService, AdminAuthGuard],
+  providers: [AuthService, AuthGuard,UserService, AdminAuthGuard, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
