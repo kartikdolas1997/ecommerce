@@ -28,6 +28,8 @@ import { UserService } from './user.service';
 import { AdminAuthGuardService as AdminAuthGuard } from './admin-auth-guard.service';
 import { PrductFormComponent } from './admin/prduct-form/prduct-form.component';
 import { CategoryService } from './category.service';
+import { FormsModule } from '@angular/forms';
+import { ProductService } from './product.service';
 
 
 // import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -57,6 +59,8 @@ import { CategoryService } from './category.service';
     MaterialModule,
     BrowserAnimationsModule,
     AngularFireAuthModule,
+    FormsModule,
+    BrowserModule,
     // AngularFireAuthModule,
     
     AngularFireModule.initializeApp(environment.config),
@@ -64,7 +68,7 @@ import { CategoryService } from './category.service';
     
     // MDBBootstrapModule.forRoot()
   ],
-  providers: [AuthService, AuthGuard,UserService, AdminAuthGuard, CategoryService],
+  providers: [AuthService, AuthGuard,UserService, AdminAuthGuard, CategoryService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
