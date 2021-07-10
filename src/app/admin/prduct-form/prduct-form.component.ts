@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/product.service';
 })
 export class PrductFormComponent implements OnInit {
 categories$;
-product;
+product :any ={};
 
   constructor(categServ:CategoryService,
     private router:Router,
@@ -22,12 +22,15 @@ product;
     this.categories$ = categServ.getCategories()
     console.log(this.categories$);
     
+    
+   }
+   
+
+  ngOnInit(): void {
+
     let id = this.route.snapshot.paramMap.get('id');
     if(id) 
     {this.productService.get(id).valueChanges().subscribe(p => this.product = p)}
-   }
-
-  ngOnInit(): void {
   }
   save(product){
     console.log(product);
