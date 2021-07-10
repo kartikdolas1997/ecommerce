@@ -28,8 +28,12 @@ const routes: Routes = [
   { path: 'my/orders', component: MyOrdersComponent, canActivate:[AuthGuardService] },
 
   { path: 'admin/orders', component: AdminOrdersComponent, canActivate:[AuthGuardService,AdminAuthGuardService] },
-  { path: 'admin/products', component: AdminProductsComponent, canActivate:[AuthGuardService,AdminAuthGuardService] },
-  { path: 'admin/products/new', component: PrductFormComponent, canActivate:[AuthGuardService,AdminAuthGuardService] },
+  { path: 'admin/product/new', component: PrductFormComponent, canActivate:[AuthGuardService,AdminAuthGuardService] },
+  { path: 'admin/product/new', component: PrductFormComponent, canActivate:[AuthGuardService,AdminAuthGuardService] },
+  { path: 'admin/product/:id', component: PrductFormComponent, canActivate:[AuthGuardService,AdminAuthGuardService] },
+  { path: 'admin/product', component: AdminProductsComponent, canActivate:[AuthGuardService,AdminAuthGuardService] },
+
+
 
 
 
