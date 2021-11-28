@@ -15,6 +15,7 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { LoginComponent } from './login/login.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { DataTableModule} from 'angular-4-data-table'
 
 import { environment } from 'src/environments/environment';
 import { AuthService } from './auth.service';
@@ -58,6 +59,7 @@ import { ProductService } from './product.service';
     NgbModule,
     MaterialModule,
     BrowserAnimationsModule,
+    DataTableModule,
     AngularFireAuthModule,
     FormsModule,
     BrowserModule,
